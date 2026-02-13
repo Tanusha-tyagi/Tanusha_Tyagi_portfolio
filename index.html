@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TANUSHA TYAGI | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <h2 class="logo">TANUSHA TYAGI</h2>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div class="hero-left">
+
+        <h1>
+            I Build <br>
+            <span class="gradient-text" id="changing-text"></span>
+        </h1>
+
+        <p>
+            Java & Spring Boot Developer focused on building scalable backend systems.
+        </p>
+
+        <p class="current-work">
+            🚀 Currently working in 
+            <span>Web Development</span> & 
+            <span>DevOps</span>
+        </p>
+
+        <div class="buttons">
+    <button class="btn-primary" onclick="openProjects()">View Projects</button>
+    <button class="btn-secondary" onclick="openResume()">Resume</button>
+</div>
+
+
+    </div>
+
+    <div class="hero-right">
+        <h3>Java Developer</h3>
+        <p class="status">{ SPRING_BOOT : "ACTIVE" }</p>
+        <p class="status">{ WEB_DEV : "ACTIVE" }</p>
+        <p class="status">{ DEVOPS : "LEARNING & DEPLOYING" }</p>
+    </div>
+</section>
+
+<!-- Typing Animation Script -->
+<script>
+    const texts = [
+        "Scalable Backend Systems",
+        "Modern Web Applications",
+        "DevOps Solutions",
+        "High-Performance APIs"
+    ];
+
+    let count = 0;
+    let index = 0;
+    let currentText = "";
+    let letter = "";
+
+    (function type() {
+        if (count === texts.length) {
+            count = 0;
+        }
+
+        currentText = texts[count];
+        letter = currentText.slice(0, ++index);
+
+        document.getElementById("changing-text").textContent = letter;
+
+        if (letter.length === currentText.length) {
+            setTimeout(() => {
+                index = 0;
+                count++;
+            }, 1200);
+        }
+
+        setTimeout(type, 80);
+    })();
+</script>
+
+</body>
+</html>
